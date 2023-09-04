@@ -1,0 +1,52 @@
+.main {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #121212;
+  }
+  
+  input {
+    height: 30px;
+    width: clamp(300px, 50vw, 600px);
+    outline: none;
+    border-radius: 15px;
+    padding-inline: 10px;
+    border: none;
+    background-color: #303030;
+    color: white;
+    transition: border 0.3s ease; /* Add a smooth transition for the border */
+  }
+  
+  input:focus {
+    border: 2px solid #08c415;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 50px;
+    width: clamp(300px, 50vw, 600px);
+    background-color: #303030;
+    border: 2px solid #08c415;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 0; /* Initially hide the dropdown */
+    transform: translateY(-10px); /* Move the dropdown up and out of view */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Add smooth transitions for opacity and transform */
+  }
+  
+  /* Style for the dropdown when it's visible */
+  .dropdownactive {
+    opacity: 1;
+    transform: translateY(0);
+    position: absolute;
+    top: 60px;
+    width: clamp(300px, 50vw, 600px);
+    background-color: #303030;
+    border: 2px solid #08c415;
+    border-radius: 15px;
+    padding: 10px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
