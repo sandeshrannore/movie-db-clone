@@ -1,9 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { dataApi } from "../api/ApiSlice";
 
 export const store = configureStore({
-    reducer:{}
-})
+  reducer: {
+    [dataApi.reducerPath]: dataApi.reducer,
+  },
 
-export type RootState = ReturnType<typeof store.getState>
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(dataApi.middleware),
+});
 
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
