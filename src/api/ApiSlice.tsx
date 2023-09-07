@@ -41,6 +41,9 @@ export const dataApi = createApi({
     getPopularMovies: builder.query<MovieResponse, void>({
       query: () => "movie/popular?language=en-US&page=1",
     }),
+    getTrendingMovies: builder.query<MovieResponse, void>({
+      query: () => "trending/movie/day?language=en-US",
+    }),
 
     searchMoviesByTitle: builder.query<MovieResponse, string>({
       query: (title) =>
@@ -49,4 +52,8 @@ export const dataApi = createApi({
   }),
 });
 
-export const { useGetPopularMoviesQuery, useSearchMoviesByTitleQuery } = dataApi;
+export const {
+  useGetPopularMoviesQuery,
+  useSearchMoviesByTitleQuery,
+  useGetTrendingMoviesQuery,
+} = dataApi;
